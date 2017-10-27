@@ -1,7 +1,7 @@
 stage 'Dev'
 node {
     checkout scm
-    sh "mix deps.get"
+    sh "MIX_ENV=test mix deps.get"
 }
 
 stage 'QA'
