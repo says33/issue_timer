@@ -15,7 +15,7 @@ pipeline {
                       echo "${scannerHome}"
                 }
                 withSonarQubeEnv('sonar') {
-                   sh "${scannerHome}/bin/sonar-runner -e -Dsonar.host.url=http://localhost:9000/sonar/"
+                   sh "${scannerHome}/bin/sonar-runner -e -Dsonar.host.url=http://localhost:9000/sonar"
                 }
              }
           }
