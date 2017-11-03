@@ -3,9 +3,13 @@ node {
     checkout scm
     sh "MIX_ENV=test mix deps.get"
 }
-
-stage 'QA'
-node {
-    echo "Testing ${env.BRANCH_NAME}..."
-    sh "mix test"
+stage('SonarQube analysis') {
+    steps {
+        script {
+            scannerHome = tool 'SonarQube Scanner 2.5'
+        }
+        withSonarQubeEnv('sonar') {
+            sh "${scannerHome}/bin/sonar-runner -e -Dsonar.host.url=http://localhost:9000/sonar/"
+        }
+    }
 }
