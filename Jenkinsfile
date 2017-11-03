@@ -1,16 +1,3 @@
-stage 'Dev'
-
-stage('SonarQube analysis') {
-    steps {
-        script {
-            scannerHome = tool 'SonarQube Scanner 2.5'
-        }
-        withSonarQubeEnv('sonar') {
-            sh "${scannerHome}/bin/sonar-runner -e -Dsonar.host.url=http://localhost:9000/sonar/"
-        }
-    }
-}
-
 pipeline {
     agent any
 
