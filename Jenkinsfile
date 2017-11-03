@@ -4,10 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               node {
-                    checkout scm
-                    sh "MIX_ENV=test mix deps.get"
-                }
+                checkout scm
+                sh "MIX_ENV=test mix deps.get"
             }
         }
          stage('SonarQube analysis') {
