@@ -10,9 +10,8 @@ pipeline {
         }
         stage('Git Changelog Job') {
             steps {
-              scm {
                 git('https://github.com/tomasbjerre/pull-request-notifier-for-bitbucket.git')
-              }
+
               publishers {
                 gitChangelogRecorder {
                   config {
