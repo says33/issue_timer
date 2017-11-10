@@ -13,7 +13,7 @@ pipeline {
             git {
               remote {
                 name('origin')
-                url('https://github.com/tomasbjerre/pull-request-notifier-for-bitbucket.git')
+                url('https://github.com/says33/issue_timer.git')
               }
             }
 
@@ -21,7 +21,7 @@ pipeline {
             gitChangelogRecorder {
               config {
                 fromType("commit")
-                fromReference("20aca44")
+                fromReference("")
                 toType("ref")
                 toReference("master")
 
@@ -112,8 +112,7 @@ pipeline {
                 mediaWikiUseTemplateFile(false)
                 mediaWikiTemplateFile(null)
 
-                useGitHub(true)
-                gitHubApi("https://api.github.com/repos/tomasbjerre/pull-request-notifier-for-bitbucket")
+                
                 gitHubIssuePattern(null)
                 gitHubToken(null)
                 gitHubApiTokenCredentialsId(null)
