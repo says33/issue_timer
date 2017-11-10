@@ -124,7 +124,7 @@ pipeline {
                     createFileUseTemplateFile(false)
                     customIssues {}
                     dateFormat(null)
-                    file(null)
+                    file("")
                     useGitLab(false)
                     gitLabServer(null)
                     gitLabProjectName(null)
