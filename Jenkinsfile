@@ -124,7 +124,7 @@ pipeline {
                     createFileUseTemplateFile(false)
                     customIssues {}
                     dateFormat(null)
-                    file("")
+                    file("changelog.md")
                     useGitLab(false)
                     gitLabServer(null)
                     gitLabProjectName(null)
