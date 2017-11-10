@@ -11,14 +11,8 @@ pipeline {
         stage('Git Changelog Job') {
             steps {
               scm {
-                git {
-                  remote {
-                    name('origin')
-                    url('https://github.com/tomasbjerre/pull-request-notifier-for-bitbucket.git')
-                  }
-                }
+                git('https://github.com/tomasbjerre/pull-request-notifier-for-bitbucket.git')
               }
-
               publishers {
                 gitChangelogRecorder {
                   config {
