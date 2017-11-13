@@ -6,8 +6,7 @@ pipeline {
             steps {
                 checkout scm
                 sh "MIX_ENV=test mix deps.get"
-            }
-             job('Git Changelog Job') {
+                job('Git Changelog Job') {
 
               publisher {
                 gitChangelogRecorder {
@@ -134,6 +133,8 @@ pipeline {
               }
             }
         }
+            }
+             
        
         // stage('SonarQube analysis') {
           //   steps {
