@@ -12,7 +12,7 @@ pipeline {
             steps {
                 git('https://github.com/tomasbjerre/pull-request-notifier-for-bitbucket.git')
 
-              publishers {
+              publisher {
                 gitChangelogRecorder {
                   config {
                     fromType("commit")
