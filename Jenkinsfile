@@ -24,11 +24,9 @@ pipeline {
                     showSummaryUseTemplateContent(true)
                     showSummaryTemplateContent("""
             <h1> Git Changelog changelog </h1>
-
             <p>
             Changelog of Git Changelog.
             </p>
-
             {{#tags}}
             <h2> {{name}} </h2>
              {{#issues}}
@@ -43,21 +41,15 @@ pipeline {
               {{^hasIssue}}
             <h2> {{name}} </h2>
               {{/hasIssue}}
-
-
                {{#commits}}
             <a href="https://github.com/tomasbjerre/git-changelog-lib/commit/{{hash}}">{{hash}}</a> {{authorName}} <i>{{commitTime}}</i>
             <p>
             <h3>{{{messageTitle}}}</h3>
-
             {{#messageBodyItems}}
              <li> {{.}}</li> 
             {{/messageBodyItems}}
             </p>
-
-
               {{/commits}}
-
              {{/issues}}
             {{/tags}}
                     """)
@@ -67,10 +59,8 @@ pipeline {
                     mediaWikiUseTemplateContent(true)
                     mediaWikiTemplateContent("""
             __NOTOC__
-
             = Git Changelog changelog =
             Changelog of Git Changelog.
-
             {{#tags}}
             == {{name}} ==
              {{#issues}}
@@ -85,27 +75,17 @@ pipeline {
               {{^hasIssue}}
             === {{name}} ===
               {{/hasIssue}}
-
                {{#commits}}
             [https://github.com/tomasbjerre/git-changelog-lib/commit/{{hash}} {{hash}}] {{authorName}} {{commitTime}}
-
             '''{{{messageTitle}}}'''
-
             {{#messageBodyItems}}
              * {{.}} 
             {{/messageBodyItems}}
-
               {{/commits}}
-
              {{/issues}}
             {{/tags}}
                     """)
-                    mediaWikiTitle("PRNFB Changelog")
-                    mediaWikiUrl("http://web:80/w")
-                    mediaWikiUsername(null)
-                    mediaWikiPassword(null)
-                    mediaWikiUseTemplateFile(false)
-                    mediaWikiTemplateFile(null)
+                   
 
                     useGitHub(true)
                     gitHubIssuePattern(null)
@@ -116,14 +96,14 @@ pipeline {
                     useReadableTagName(true)
                     readableTagName("-([^-]+?)\$")
 
-                   configFile(null)                    
+                    configFile(null)                    
                     createFileTemplateContent(null)
                     createFileTemplateFile(null)
                     createFileUseTemplateContent(false)
                     createFileUseTemplateFile(false)
                     customIssues {}
-                    dateFormat(null)
-                    file(null)
+                    dateFormat("YYYY-MM-dd HH:mm:ss")
+
                     useGitLab(false)
                     gitLabServer(null)
                     gitLabProjectName(null)
