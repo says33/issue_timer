@@ -11,7 +11,7 @@ pipeline {
         }
         stage('changelog') {
             steps {
-                jobDsl{
+                jobDsl('changelog-dsl) {
                   publisher {
                     gitChangelogRecorder {
                       config {
