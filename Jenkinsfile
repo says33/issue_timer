@@ -107,7 +107,7 @@ pipeline {
                     mediaWikiUseTemplateFile(false)
                     mediaWikiTemplateFile(null)
 
-
+                    useGitHub(true)
                     gitHubIssuePattern(null)
                     gitHubToken(null)
                     gitHubApiTokenCredentialsId(null)
@@ -116,13 +116,14 @@ pipeline {
                     useReadableTagName(true)
                     readableTagName("-([^-]+?)\$")
 
-                    configFile(null)
+                   configFile(null)                    
                     createFileTemplateContent(null)
                     createFileTemplateFile(null)
                     createFileUseTemplateContent(false)
                     createFileUseTemplateFile(false)
                     customIssues {}
                     dateFormat(null)
+                    file(null)
                     useGitLab(false)
                     gitLabServer(null)
                     gitLabProjectName(null)
@@ -149,6 +150,8 @@ pipeline {
                     useSubDirectory(false)
                     gitLabApiTokenCredentialsId(null)
                     useGitLabApiTokenCredentials(false)
+
+
                   }
                 }
               }
