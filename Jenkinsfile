@@ -11,7 +11,6 @@ pipeline {
         }
         stage('changelog') {
             steps {
-                 job('Git Changelog Job') {
 
                   publisher {
                     gitChangelogRecorder {
@@ -137,7 +136,6 @@ pipeline {
                     }
                   }
                 }
-            }
         }
              
        
