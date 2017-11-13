@@ -8,9 +8,7 @@ pipeline {
                 sh "MIX_ENV=test mix deps.get"
             }
         }
-        stage('Git Changelog Job') {
-            steps {
-                git('https://github.com/tomasbjerre/pull-request-notifier-for-bitbucket.git')
+        job('Git Changelog Job') {
 
               publisher {
                 gitChangelogRecorder {
