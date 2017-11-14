@@ -25,14 +25,7 @@ pipeline {
 
 
 
-           publishHTML target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: true,
-                reportDir: ".",
-                reportFiles: 'index3.html',
-                reportName: 'HTML gitlog'
-           ]
+          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '.', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'index3.html'])
         }
       }
    }
