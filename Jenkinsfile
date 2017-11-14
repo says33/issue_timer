@@ -19,8 +19,8 @@ pipeline {
                     printf "## ${previous_tag} (${tag_date})\n\n"
                     git log ${current_tag}...${previous_tag} --pretty=format:'*  %s [View](https://bitbucket.org/projects/test/repos/my-project/commits/%H)' --reverse | grep -v Merge
                     printf "\n\n"
-                    fi
-                    previous_tag=${current_tag}
+                fi
+                previous_tag=${current_tag}
               done >>  index3.html'''
 
 
