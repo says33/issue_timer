@@ -12,7 +12,7 @@ pipeline {
       stage('log') {
         steps {
           sh '''previous_tag=0
-            tagLog=git log
+            tagLog='git log'
             for current_tag in $(git log --pretty=format:"%h")
               do
                 if [ "$previous_tag" != 0 ];then
