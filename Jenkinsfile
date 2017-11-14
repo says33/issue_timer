@@ -23,7 +23,7 @@ pipeline {
                 previous_tag=${current_tag}
               done >>  index3.html'''
 
-
+            sh "sleep 5; echo Hello world"
 
           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '.', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: 'index3.html'])
         }
