@@ -5,7 +5,7 @@ pipeline {
       stage('Build') {
         steps {
           checkout scm
-            sh "MIX_ENV=test mix deps.get"
+           // sh "MIX_ENV=test mix deps.get"
 
         }
       }
@@ -25,14 +25,14 @@ pipeline {
 
 
 
-                publishHTML target: [
+           publishHTML target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: false,
                 keepAll: true,
                 reportDir: ".",
                 reportFiles: 'index3.html',
                 reportName: 'HTML gitlog'
-                  ]
+           ]
         }
       }
 
